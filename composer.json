@@ -1,0 +1,19 @@
+{
+    "name": "mof/timestampable",
+    "description": "Generates automatically creation and update's date of entity property",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan"
+        }
+    ],
+    "require": {
+        "doctrine/annotations": "^1.4"
+    },
+    "autoload":{
+        "psr-4": {
+            "Mof\\Timestampable\\": "src/"
+        }
+    }
+}
