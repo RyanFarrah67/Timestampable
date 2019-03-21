@@ -1,6 +1,6 @@
 <?php
 
-namespace Mof\Mapping\Annotation;
+namespace Mof\Timestampable\Mapping\Annotation;
 
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Annotations\Annotation\Target;
