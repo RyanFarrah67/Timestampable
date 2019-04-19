@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "doctrine/annotations": "^1.4"
+        "doctrine/annotations": "^1.4",
+        "doctrine/orm": "^2.5"
     },
     "autoload":{
         "psr-4": {
