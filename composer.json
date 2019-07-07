@@ -20,6 +20,6 @@
         "classmap": ["tests/ConfigureDb.php", "tests/Fixture/EntityTest.php"]
     },
     "require-dev": {
-        "codeception/base": "^3.0"
+        "codeception/base": "^2.5.6"
     }
 }
