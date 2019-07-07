@@ -8,6 +8,7 @@ use Doctrine\Common\EventManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\ORM\Tools\SchemaValidator;
 use Doctrine\ORM\EntityManagerInterface;
+use Mof\Timestampable\Test\Fixture\EntityTest;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Mof\Timestampable\Event\TimestampableSubscriber;
 
@@ -74,7 +75,7 @@ class ConfigureDb
     protected static function getAllClassMetadata(EntityManagerInterface $entityManager)
     {
         return array(
-            $entityManager->getClassMetadata('Mof\Timestampable\Test\Fixture\EntityTest'),
+            $entityManager->getClassMetadata(EntityTest::class),
         );
     }
 }
