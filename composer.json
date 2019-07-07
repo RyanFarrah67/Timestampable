@@ -5,7 +5,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Ryan"
+            "name": "Ryan Farrah"
         }
     ],
     "require": {
@@ -16,6 +16,10 @@
     "autoload":{
         "psr-4": {
             "Mof\\Timestampable\\": "src/"
-        }
+        },
+        "classmap": ["tests/ConfigureDb.php", "tests/Fixture/EntityTest.php"]
+    },
+    "require-dev": {
+        "codeception/base": "^3.0"
     }
 }

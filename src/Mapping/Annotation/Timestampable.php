@@ -12,7 +12,5 @@ use Doctrine\Common\Annotations\Annotation\Target;
  */
 class Timestampable
 {
-    public $createdAt;
-
-    public $updatedAt;
+    public $on;
 }
