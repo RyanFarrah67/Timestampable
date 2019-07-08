@@ -36,6 +36,8 @@ class TimestampableTest extends \Codeception\Test\Unit
         ]);
         $pastDate = $testEntity->getUpdatedAt();
 
+        sleep(1);
+
         $testEntity->setName('new name');
         $this->tester->persistEntity($testEntity);
         $testEntity = $this->tester->grabEntityFromRepository(EntityTest::class, [
