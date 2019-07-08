@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/RyanFarrah67/Timestampable.svg?branch=master)](https://travis-ci.org/RyanFarrah67/Timestampable)
+
 # Presentation
 
 This little library for Doctrine projects allows you to automatically handle creation and update on certain properties of your 
