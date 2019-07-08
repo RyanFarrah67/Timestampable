@@ -19,7 +19,7 @@ class ConfigureDb
         $isDevMode = true;
         AnnotationRegistry::registerLoader('class_exists');
         
-        $config = Setup::createAnnotationMetadataConfiguration(array("/var/www/html/timestamptest/vendor/mof/timestampable/tests/Fixture"), $isDevMode, null, null, false);
+        $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . '/Fixture'), $isDevMode, null, null, false);
         
         $conn = array(
             'path' => 'tests/test.db',
