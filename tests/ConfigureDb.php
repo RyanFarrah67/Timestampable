@@ -9,6 +9,7 @@ use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\ORM\Tools\SchemaValidator;
 use Doctrine\ORM\EntityManagerInterface;
 use Mof\Timestampable\Test\Fixture\EntityTest;
+use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Mof\Timestampable\Event\TimestampableSubscriber;
 
@@ -25,9 +26,11 @@ class ConfigureDb
             'path' => 'tests/test.db',
             'driver' => 'pdo_sqlite'
         );
+
+        $annotationReader = new AnnotationReader();
         
         $eventManager = new EventManager();
-        $eventManager->addEventSubscriber(new TimestampableSubscriber());
+        $eventManager->addEventSubscriber(new TimestampableSubscriber($annotationReader));
         
         
         $entityManager = EntityManager::create($conn, $config, $eventManager);

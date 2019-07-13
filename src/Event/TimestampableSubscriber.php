@@ -34,9 +34,14 @@ class TimestampableSubscriber implements EventSubscriber
     ];
 
     /**
-     * @var AnnotationReader|null
+     * @var AnnotationReader
      */
     protected $annotationReader;
+
+    public function __construct(AnnotationReader $annotationReader)
+    {
+        $this->annotationReader = $annotationReader;
+    }
 
     public function getSubscribedEvents()
     {
@@ -48,10 +53,6 @@ class TimestampableSubscriber implements EventSubscriber
 
     public function prePersist(LifecycleEventArgs $args)
     {
-        if(!$this->annotationReader) {
-            $this->annotationReader = new AnnotationReader();
-        }
-        
         $entity = $args->getEntity();
         $reflectionEntity = new \ReflectionClass($entity);
 
@@ -69,10 +70,6 @@ class TimestampableSubscriber implements EventSubscriber
 
     public function preUpdate(LifecycleEventArgs $args)
     {
-        if(!$this->annotationReader) {
-            $this->annotationReader = new AnnotationReader();
-        }
-        
         $entity = $args->getEntity();
         $reflectionEntity = new \ReflectionClass($entity);
 
