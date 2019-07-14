@@ -5,8 +5,8 @@ namespace Mof\Timestampable\Event;
 use Doctrine\ORM\Events;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use Doctrine\Common\Annotations\AnnotationReader;
 use Mof\Timestampable\Mapping\Annotation\Timestampable;
+use Doctrine\Common\Annotations\Reader;
 
 /**
  * Listener which handle creation and update's date on properties managed by Mapping\Annotation\Timestampable annotation class
@@ -34,11 +34,14 @@ class TimestampableSubscriber implements EventSubscriber
     ];
 
     /**
-     * @var AnnotationReader
+     * @var Reader
      */
     protected $annotationReader;
 
-    public function __construct(AnnotationReader $annotationReader)
+    /**
+     * @param Reader $annotationReader
+     */
+    public function __construct(Reader $annotationReader)
     {
         $this->annotationReader = $annotationReader;
     }
@@ -51,6 +54,9 @@ class TimestampableSubscriber implements EventSubscriber
         );
     }
 
+    /**
+     * @param LifecycleEventArgs $args
+     */
     public function prePersist(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();
@@ -68,6 +74,9 @@ class TimestampableSubscriber implements EventSubscriber
         }
     }
 
+    /**
+     * @param LifecycleEventArgs $args
+     */
     public function preUpdate(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();

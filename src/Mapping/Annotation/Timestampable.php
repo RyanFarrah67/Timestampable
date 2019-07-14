@@ -12,5 +12,13 @@ use Doctrine\Common\Annotations\Annotation\Target;
  */
 class Timestampable
 {
+    const ON_CREATE = 'create';
+    const ON_UPDATE = 'update';
+
+    /**
+     * on indicates at which event you want to listen for the property, the constants in this class indicate the events available
+     *
+     * @var string
+     */
     public $on;
 }

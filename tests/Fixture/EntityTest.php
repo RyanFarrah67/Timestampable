@@ -27,14 +27,14 @@ class EntityTest
     /**
     * @var \DateTime
     * @ORM\Column(type="datetime", name="created_at")
-    * @Timestampable(on="create")
+    * @Timestampable(on=Timestampable::ON_CREATE)
     */
     protected $createdAt;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime", name="updated_at")
-     * @Timestampable(on="update")
+     * @Timestampable(on=Timestampable::ON_UPDATE)
      */
     protected $updatedAt;
 
