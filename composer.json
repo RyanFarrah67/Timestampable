@@ -1,6 +1,6 @@
 {
     "name": "mof/timestampable",
-    "description": "Generates automatically creation and update's date of entity property",
+    "description": "Generates automatically creation and update's date of Doctrine entity property",
     "type": "library",
     "license": "MIT",
     "authors": [
